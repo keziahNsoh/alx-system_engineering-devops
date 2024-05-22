@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 # Define the regular expression
 pattern = /School/
 
