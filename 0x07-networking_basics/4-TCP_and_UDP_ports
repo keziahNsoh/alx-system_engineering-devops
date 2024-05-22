@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# This script displays listening ports and their corresponding PID and program name.
+
+# Get listening sockets and their PIDs
+netstat -tuln | awk '$NF ~ /^[0-9]+\/(tcp|udp)/ {print $1, $4, $7}' | \
+while read -r protocol local_address pid; do
+    # Get program name from PID
+    program=$(basename "$(readlink /proc/$pid/exe)")
+    # Output listening socket, PID, and program name
+    echo "Protocol: $protocol, Local Address: $local_address, PID: $pid, Program Name: $program"
+done
