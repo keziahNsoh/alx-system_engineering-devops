@@ -2,7 +2,7 @@
 # This script displays a list of currently running processes
 
 # Display header with fixed width
-printf "%-14s %-14s %-14s %-s\n" "PID" "PID" "" ""
+printf "%-14s %-14s %-14s %-14s\n" "PID" "PPID" "USER" "COMMAND"
 
 # Display processes with hierarchy
 ps axo pid,ppid,user,comm --forest
