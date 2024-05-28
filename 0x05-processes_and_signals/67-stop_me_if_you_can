@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script stops the 7-highlander process
+
+# Find the process ID of 7-highlander
+pid=$(pgrep -f "7-highlander")
+
+# Check if the process ID is not empty
+if [ -n "$pid" ]; then
+    # Terminate the process
+    kill "$pid"
+    echo "Process terminated"
+else
+    echo "Process not found"
+fi
+
