@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# Function to add or update hostname mappings
+update_hosts_file() {
+    cp /etc/hosts ~/hosts.new
+    sed -i "s/^$1.*/$2/g" ~/hosts.new
+    sudo cp -f ~/hosts.new /etc/hosts
+    rm ~/hosts.new
+}
+
+# This ensure localhost resolves to 127.0.0.2
+update_hosts_file "127.0.0.1[[:space:]]localhost" "127.0.0.2 localhost"
+
+# This ensure facebook.com resolves to 8.8.8.8
+update_hosts_file "facebook.com" "8.8.8.8 facebook.com"
+
