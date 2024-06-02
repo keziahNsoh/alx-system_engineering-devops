@@ -13,5 +13,5 @@ match = input.match(regex)
 if match
   puts match[0]
 else
-  puts "No match found"
+  puts ""
 end
