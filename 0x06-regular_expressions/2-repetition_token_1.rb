@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 # Regular expression to match the pattern
-regex = /hb(t{2,})n/
+regex = /^hb+t+n$/
 
 input = ARGV[0]
 
