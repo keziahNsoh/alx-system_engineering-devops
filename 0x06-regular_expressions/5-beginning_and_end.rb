@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-# Regular expression to match the pattern
-regex = /h.n/
+# Regular expression to match the pattern (case-insensitive)
+regex = /^h.n$/i
 
 # Accept the argument from command line
 input = ARGV[0]
