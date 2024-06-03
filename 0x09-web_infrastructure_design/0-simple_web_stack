@@ -1,0 +1,21 @@
+nfrastructure consists of a single server hosting all components: web server (Nginx), application server, and database (MySQL).
+The website is accessible via the domain name "www.foobar.com," which is resolved to the server's IP address using DNS.
+Communication between components happens over localhost (127.0.0.1) for security and performance reasons.
+
+Roles of Components:
+
+Web Server (Nginx): Acts as the entry point for user requests, handles HTTP traffic, and forwards requests to the application server.
+Application Server: Hosts the application logic, processes requests from the web server, interacts with application files, and communicates with the database.
+Database (MySQL): Stores and manages data required by the application.
+
+Communication with Users:
+
+The server communicates with users' computers over HTTP or HTTPS protocols via the internet.
+
+Issues with the Infrastructure:
+
+Single Point of Failure (SPOF): Vulnerable to downtime if the server fails.
+Downtime during Maintenance: Website/application may be inaccessible during maintenance tasks.
+Limited Scalability: Unable to handle sudden increases in traffic beyond the capacity of a single server.
+
+https://docs.google.com/drawings/d/1WQLbF2LjNwz7wq6_tdK7_YGm5r-UiAVREKHGf2q6V6k/edit?usp=drive_link
