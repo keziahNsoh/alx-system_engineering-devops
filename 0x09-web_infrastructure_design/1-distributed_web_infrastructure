@@ -1,0 +1,10 @@
+nternet is where user requests originate.
+Load Balancer (HAProxy): Acts as the entry point for incoming requests. Distributes traffic evenly across multiple servers to ensure high availability and scalability. It balances the load between the two application servers.
+
+Server 1 (Nginx): Acts as the web server, serving static content, and forwarding dynamic requests to the application servers. 
+
+Server 2 (Application Server): Hosts the application logic and processes requests forwarded by Nginx. Communicates with the database server to retrieve or store data.
+
+Server 3 (MySQL Database): Hosts the MySQL database, storing application data. It communicates with the application server to handle database operations.i
+
+https://docs.google.com/drawings/d/1Odiqaa7cuAmun6SzXtmO0QqDHfE3hnRI5wi41cvcj0Q/edit?usp=sharing

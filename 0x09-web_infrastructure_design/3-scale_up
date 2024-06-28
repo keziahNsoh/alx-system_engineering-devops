@@ -1,0 +1,9 @@
+econd Load Balancer (HAProxy): The second load balancer is added to create a cluster with the first one for redundancy and scalability.
+
+Web Server (Nginx):The web server is added to separate static content serving from dynamic content processing, enhancing scalability and performance.
+
+Application Server:The application server is added to host and execute the application logic, ensuring efficient processing of dynamic requests.
+
+Database Server (MySQL):The database server is added to store and manage application data separately, ensuring data integrity, scalability, and performance.
+
+https://docs.google.com/drawings/d/1YKBZUx3gfvRceYHpGPXrfkX_LHZjmjVZuaJXtaYjJHY/edit?usp=drive_link

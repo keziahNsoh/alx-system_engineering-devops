@@ -1,0 +1,18 @@
+nternet: External network where user requests originate.
+
+Load Balancer (HAProxy): Entry point for incoming requests. Distributes traffic among multiple servers for availability and scalability.
+
+Server 1 (Nginx): Web server serving static content and handling dynamic requests. Configured to use SSL certificate for HTTPS encryption.
+
+Server 2 (Application Server): Hosts application logic and processes requests forwarded by Nginx. Communicates with the database server.
+
+Server 3 (MySQL Database): Stores and manages application data. Accessed by the application server.
+
+Firewalls: Protect servers from unauthorized access and potential threats by controlling network traffic.
+
+SSL Certificate: Enables HTTPS encryption for secure communication between clients and the web server, preventing eavesdropping and tampering.
+
+Monitoring Clients: Is installed on each server to collect monitoring data. They send data to a monitoring service like Sumo Logic for analysis and alerting.
+
+
+https://docs.google.com/drawings/d/1Xh4eCbbrvhk2qCvzAINLDqVeh_UlLPkgLcRXfhN3QnI/edit?usp=drive_link
