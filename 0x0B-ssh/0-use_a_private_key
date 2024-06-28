@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Set the private key file
+KEYFILE="$HOME/.ssh/school"
+
+# Set my server IP address
+SERVER_IP="54.157.157.39"
+
+# Connect to the server using SSH with the private key
+ssh -i "$KEYFILE" ubuntu@"$SERVER_IP"
+
