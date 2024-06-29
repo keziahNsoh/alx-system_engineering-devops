@@ -1,10 +1,4 @@
-#!/usr/bin/env bash
-# Set the private key file
-KEYFILE="$HOME/.ssh/school"
+#!/bin/bash
+# This script connects to a server using SSH with a specific private key and user
 
-# Set my server IP address
-SERVER_IP="54.157.157.39"
-
-# Connect to the server using SSH with the private key
-ssh -i "$KEYFILE" ubuntu@"$SERVER_IP"
-
+ssh -i ~/.ssh/school ubuntu@54.157.157.39
