@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+# Restart Apache to serve "Hello Holberton" page
+service apache2 restart
+
+# Check if Apache is not running, then start it
+apache_status=$(service apache2 status)
+if [[ $apache_status =~ "not running" ]]; then
+    service apache2 start
+fi
+
+# Navigate to Apache document root and create index.html if it doesn't exist
+cd /var/www/html
+if [ ! -f index.html ]; then
+    echo 'Hello Holberton' > index.html
+fi
+
+# Restart Apache to apply changes
+service apache2 restart
+
