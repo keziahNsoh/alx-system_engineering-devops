@@ -21,4 +21,4 @@ backend Randommallstudio.tech_backend
     server 218560-web-02 54.89.109.20:80 check
 EOT
 
-sudo service haproxy restart
+sudo service haproxy start
