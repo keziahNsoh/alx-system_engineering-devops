@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+sed -i 's/# listen 80/listen 80/' /etc/nginx/sites-available/default
+ufw allow 'Nginx HTTP'
+service nginx restart
+

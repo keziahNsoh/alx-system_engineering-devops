@@ -1,0 +1,92 @@
+Hit http://repo.mysql.com trusty InRelease
+Ign http://archive.ubuntu.com trusty InRelease
+Hit http://security.ubuntu.com trusty-security InRelease
+Hit http://archive.ubuntu.com trusty-updates InRelease
+Hit http://archive.ubuntu.com trusty-backports InRelease
+Hit http://archive.ubuntu.com trusty Release.gpg
+Hit http://archive.ubuntu.com trusty Release
+Ign https://download.docker.com trusty InRelease
+Hit http://security.ubuntu.com trusty-security/main amd64 Packages
+Hit http://security.ubuntu.com trusty-security/restricted amd64 Packages
+Hit http://security.ubuntu.com trusty-security/universe amd64 Packages
+Hit http://security.ubuntu.com trusty-security/multiverse amd64 Packages
+Hit http://archive.ubuntu.com trusty-updates/main amd64 Packages
+Ign https://download.docker.com trusty Release.gpg
+Hit http://archive.ubuntu.com trusty-updates/restricted amd64 Packages
+Get:1 https://esm.ubuntu.com trusty-infra-security InRelease
+Get:2 https://esm.ubuntu.com trusty-infra-updates InRelease
+Get:3 https://esm.ubuntu.com trusty-infra-security/main amd64 Packages
+Ign https://download.docker.com trusty Release
+Hit http://archive.ubuntu.com trusty-updates/universe amd64 Packages
+Hit http://archive.ubuntu.com trusty-updates/multiverse amd64 Packages
+Get:4 https://esm.ubuntu.com trusty-infra-updates/main amd64 Packages
+Hit http://archive.ubuntu.com trusty-backports/main amd64 Packages
+Hit http://archive.ubuntu.com trusty-backports/restricted amd64 Packages
+Hit http://archive.ubuntu.com trusty-backports/universe amd64 Packages
+Hit http://archive.ubuntu.com trusty-backports/multiverse amd64 Packages
+Hit http://archive.ubuntu.com trusty/main amd64 Packages
+Err https://download.docker.com trusty/stable amd64 Packages
+  
+Hit http://archive.ubuntu.com trusty/restricted amd64 Packages
+Hit http://archive.ubuntu.com trusty/universe amd64 Packages
+Hit http://archive.ubuntu.com trusty/multiverse amd64 Packages
+Err https://download.docker.com trusty/stable amd64 Packages
+  
+Err https://download.docker.com trusty/stable amd64 Packages
+  
+Err https://download.docker.com trusty/stable amd64 Packages
+  
+Err https://download.docker.com trusty/stable amd64 Packages
+  gnutls_handshake() failed: A TLS packet with unexpected length was received.
+Fetched 871 kB in 21s (41.5 kB/s)
+W: Size of file /var/lib/apt/lists/esm.ubuntu.com_ubuntu_dists_trusty-infra-security_main_binary-amd64_Packages.gz is not what the server reported 853720 853942
+W: Size of file /var/lib/apt/lists/esm.ubuntu.com_ubuntu_dists_trusty-infra-updates_main_binary-amd64_Packages.gz is not what the server reported 2341 2563
+W: Failed to fetch http://repo.mysql.com/apt/ubuntu/dists/trusty/InRelease  Unable to find expected entry 'mysql-5.7-dmr/binary-amd64/Packages' in Release file (Wrong sources.list entry or malformed file)
+
+W: Failed to fetch https://download.docker.com/linux/ubuntu/dists/trusty/stable/binary-amd64/Packages  gnutls_handshake() failed: A TLS packet with unexpected length was received.
+
+E: Some index files failed to download. They have been ignored, or old ones used instead.
+Reading package lists...
+Building dependency tree...
+Reading state information...
+nginx is already the newest version.
+0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.
+W: Duplicate sources.list entry http://archive.ubuntu.com/ubuntu/ trusty-backports/main amd64 Packages (/var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-backports_main_binary-amd64_Packages.gz)
+W: Duplicate sources.list entry http://archive.ubuntu.com/ubuntu/ trusty-backports/restricted amd64 Packages (/var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-backports_restricted_binary-amd64_Packages.gz)
+W: Duplicate sources.list entry http://archive.ubuntu.com/ubuntu/ trusty-backports/universe amd64 Packages (/var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-backports_universe_binary-amd64_Packages.gz)
+W: Duplicate sources.list entry http://archive.ubuntu.com/ubuntu/ trusty-backports/multiverse amd64 Packages (/var/lib/apt/lists/archive.ubuntu.com_ubuntu_dists_trusty-backports_multiverse_binary-amd64_Packages.gz)
+W: You may want to run apt-get update to correct these problems
+ERROR: initcaps
+[Errno 2] iptables v1.4.21: can't initialize iptables table `filter': Permission denied (you must be root)
+Perhaps iptables or your kernel needs to be upgraded.
+
+sudo: systemctl: command not found
+Verifying Nginx on port 80...
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN     
+tcp6       0      0 :::80                   :::*                    LISTEN     
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+    body {
+        width: 35em;
+        margin: 0 auto;
+        font-family: Tahoma, Verdana, Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+Nginx configuration for port 80 has been verified and Nginx is running.
