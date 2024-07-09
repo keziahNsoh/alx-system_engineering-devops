@@ -1,0 +1,4 @@
+#!/bin/bash
+# This script connects to a server using SSH with a specific private key and user
+
+ssh -i ~/.ssh/school ubuntu@54.157.157.39
