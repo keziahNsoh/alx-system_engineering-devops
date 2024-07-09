@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script installs and configures Nginx on an Ubuntu server to serve a Hello World! page.
+
+# Update package lists and install nginx
+sudo apt-get update
+sudo apt-get install -y nginx  # The -y flag will automatically answer yes to prompts
+
+# Start nginx service
+sudo service nginx start
+
+# Create index.html with "Hello World!"
+echo "Hello World!" | sudo tee /var/www/html/index.html >/dev/null
+
+# Restart Nginx to apply changes
+sudo service nginx restart
