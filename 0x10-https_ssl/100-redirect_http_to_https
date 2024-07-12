@@ -1,0 +1,4 @@
+frontend http_frontend
+    bind *:80
+    redirect scheme https code 301 if !{ ssl_fc }
+

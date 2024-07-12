@@ -1,0 +1,28 @@
+global
+    log /dev/log    local0
+    log /dev/log    local1 notice
+    chroot /var/lib/haproxy
+    stats socket /run/haproxy/admin.sock mode 660 level admin
+    stats timeout 30s
+    user haproxy
+    group haproxy
+    daemon
+
+defaults
+    log global
+    mode    http
+    option  httplog
+    option  dontlognull
+    timeout connect 5000
+    timeout client  50000
+    timeout server  50000
+
+frontend www_frontend
+    bind *:443 ssl crt /etc/ssl/certs/holberton.pem
+    reqadd X-Forwarded-Proto:\ https
+    default_backend www_backend
+
+backend www_backend
+    server web-01 54.157.157.39:80 check
+    server web-02 <web-02-IP>:80 check
+

@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+# This script retrieves DNS information for specified subdomains of a given domain.
+
+# Function to retrieve and format DNS information
+get_dns_info() {
+    domain="$1"
+    subdomain="$2"
+
+    # If subdomain is not provided, use default list
+    if [ -z "$subdomain" ]; then
+        subdomains=("www" "lb-01" "web-01" "web-02")
+    else
+        subdomains=("$subdomain")
+    fi
+
+    for sub in "${subdomains[@]}"; do
+        # Retrieve DNS information using dig and suppress warnings
+        dns_output=$(dig +short ${sub}.${domain} | head -n1)
+
+        # Check if DNS record exists
+        if [ -n "$dns_output" ]; then
+            record_type=$(dig ${sub}.${domain} | awk '/^;; ANSWER SECTION:/{getline; print $4}')
+            destination=$(dig ${sub}.${domain} | awk '/^;; ANSWER SECTION:/{getline; print $5}')
+
+            # Print formatted output
+            echo "The subdomain ${sub} is a ${record_type} record and points to ${destination}"
+        fi
+    done
+}
+
+# Check if domain argument is provided
+if [ -z "$1" ]; then
+    echo "Error: Domain name argument missing."
+    exit 1
+fi
+
+domain="$1"
+subdomain="$2"
+
+# Call function to retrieve and display DNS information
+get_dns_info "${domain}" "${subdomain}"
+
+
