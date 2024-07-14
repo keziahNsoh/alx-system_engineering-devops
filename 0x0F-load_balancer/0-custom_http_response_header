@@ -1,27 +1,37 @@
-!/usr/bin/env bash
-#Install nginx web server
-sudo apt-get update && sudo apt-get install nginx
+#!/usr/bin/env bash
+
+# Install nginx web server
+sudo apt-get update
+sudo apt-get install -y nginx
 
 # Start nginx service
 sudo service nginx start
 
-# Create index.html with "Hello World!"
-sudo touch /var/www/html/index.html
-sudo chmod 666 /var/www/html/index.html
-echo "Hello World!" > /var/www/html/index.html
+# Configure nginx to add X-Served-By header
+sudo bash -c 'cat << EOF > /etc/nginx/conf.d/x-served-by.conf
+server {
+    listen 80 default_server;
+    server_name _;
+    server_tokens off;
 
-# Update Nginx configuration to add redirection
-sudo sed -i '/^}$/i \ \n\trewrite ^/redirect_me https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+    # Define a map block to map hostname patterns to server identifiers
+    map \$hostname \$server_id {
+        default "";
+        ~^(?<student_id>[^-]+)-web-01\$ \$student_id;
+        ~^(?<student_id>[^-]+)-web-02\$ \$student_id;
+    }
 
-# Create custom 404 error page
-sudo touch /var/www/html/404.html
-echo "Ceci n'est pas une page" | sudo tee /var/www/html/404.html
+    # Add X-Served-By header based on mapped server_id
+    add_header X-Served-By \$server_id;
 
-# Update Nginx configuration to use custom 404 error page
-sudo sed -i '/^}$/i \ \n\terror_page 404 /404.html;\n\n\tlocation /404.html {\n\t\tinternal;\n\t}' /etc/nginx/sites-available/default
+    # Other configurations as needed
+}
+EOF'
 
-# Test Nginx configuration for syntax errors
+# Test nginx configuration
 sudo nginx -t
 
-# Restart Nginx to apply changes
-service nginx restart
+# Restart nginx to apply changes
+sudo service nginx start
+
+# Additional configuration steps as needed
