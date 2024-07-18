@@ -7,22 +7,24 @@ global
     user haproxy
     group haproxy
     daemon
+    ssl-dh-param-file /etc/haproxy/dhparams.pem
 
 defaults
     log global
-    mode    http
-    option  httplog
-    option  dontlognull
+    mode http
+    option httplog
+    option dontlognull
     timeout connect 5000
-    timeout client  50000
-    timeout server  50000
+    timeout client 50000
+    timeout server 50000
 
-frontend www_frontend
-    bind *:443 ssl crt /etc/ssl/certs/holberton.pem
-    reqadd X-Forwarded-Proto:\ https
-    default_backend www_backend
+frontend http-in
+    bind *:80
+    bind *:443 ssl crt /etc/haproxy/certs/www.fuzzfoo.tech.pem
+    redirect scheme https if !{ ssl_fc }
+    default_backend servers
 
-backend www_backend
-    server web-01 54.157.157.39:80 check
-    server web-02 <web-02-IP>:80 check
-
+backend servers
+    balance roundrobin
+   server web-01 54.157.157.39:80 check
+   server web-02 <web-02-IP>:80 check
