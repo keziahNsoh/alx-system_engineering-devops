@@ -1,31 +1,3 @@
 #!/usr/bin/env bash
-
-# Script to generate RSA key pair with specific requirements
-
-# Define variables
-KEY_NAME="school"
-BITS=4096
-PASSPHRASE="betty"
-KEY_DIR="$HOME/.ssh"
-PRIVATE_KEY="$KEY_DIR/$KEY_NAME"
-PUBLIC_KEY="$PRIVATE_KEY.pub"
-
-# Check if .ssh directory exists, create if not
-mkdir -p $KEY_DIR
-
-# Generate RSA key pair with passphrase
-ssh-keygen -t rsa -b $BITS -f $PRIVATE_KEY -N "$PASSPHRASE"
-
-# Check if key generation was successful
-if [ $? -eq 0 ]; then
-    echo "Generating public/private rsa key pair."
-    echo "Your identification has been saved in $PRIVATE_KEY."
-    echo "Your public key has been saved in $PUBLIC_KEY."
-    echo "The key fingerprint is:"
-    ssh-keygen -lf $PUBLIC_KEY | awk '{print $2}'
-    echo "The key's randomart image is:"
-    ssh-keygen -lvf $PUBLIC_KEY | tail -n +2
-else
-    echo "Error generating RSA key pair."
-fi
-
+# this is file to make the file of the key pair generator
+ssh-keygen -t rsa -f school -N betty -b 4096
