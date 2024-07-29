@@ -58,8 +58,6 @@ def fetch_all_data():
         print("Error writing to file: {}".format(e))
         sys.exit(1)
 
-    print("Data successfully exported to {}".format(filename))
-
 
 if __name__ == "__main__":
     fetch_all_data()
