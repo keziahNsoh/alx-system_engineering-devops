@@ -8,60 +8,67 @@ import requests
 import sys
 
 
-def fetch_data(employee_id):
-     """
+def export_to_json(employee_id):
+    """
     Fetches the TODO list data for the specified employee ID and exports
     it to a JSON file.
 
     Args:
         employee_id (int): The ID of the employee.
     """
-     # Define the API endpoints
-    base_url = "https://jsonplaceholder.typicode.com/"
-    users_url = "{}users/{}".format(base_url, employee_id)
-    todos_url = "{}todos?userId={}".format(base_url, employee_id)
+    # Define the API endpoints
+    user_url = "https://jsonplaceholder.typicode.com/users/{}".format(employee_id)
+    todos_url = "https://jsonplaceholder.typicode.com/users/{}/todos".format(
+        employee_id
+    )
 
+    # Fetch employee data
     try:
-        # Fetch user data
-        user_response = requests.get(users_url)
-        user_response.raise_for_status()
+        user_response = requests.get(user_url)
+        user_response.raise_for_status()  # Raise HTTPError for bad responses
         user_data = user_response.json()
-
-        # Fetch todos data
-        todos_response = requests.get(todos_url)
-        todos_response.raise_for_status()
-        todos_data = todos_response.json()
-
-        return user_data, todos_data
     except requests.RequestException as e:
-        print("Error fetching data: {}".format(e))
+        print("Error fetching user data: {}".format(e))
         sys.exit(1)
 
+    # Fetch TODO data
+    try:
+        todos_response = requests.get(todos_url)
+        todos_response.raise_for_status()  # Raise HTTPError for bad responses
+        todos_data = todos_response.json()
+    except requests.RequestException as e:
+        print("Error fetching TODO data: {}".format(e))
+        sys.exit(1)
 
-def export_to_json(employee_id, user_data, todos_data):
+    # Prepare data for export
+    user_name = user_data.get("username", "Unknown")
+    tasks = [
+        {"task": todo["title"], "completed": todo["completed"], "username": user_name}
+        for todo in todos_data
+    ]
+    export_data = {str(employee_id): tasks}
+
+    # Write data to JSON file
     filename = "{}.json".format(employee_id)
-    data = {"USER": user_data, "TODO": todos_data}
+    try:
+        with open(filename, "w") as file:
+            json.dump(export_data, file, indent=4)
+    except IOError as e:
+        print("Error writing to file: {}".format(e))
+        sys.exit(1)
 
-    with open(filename, "w") as file:
-        json.dump(data, file, indent=0)
-
-    print("Data exported to {}".format(filename))
+    print("Data successfully exported to {}".format(filename))
 
 
-def main():
+if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: python3 2-export_to_JSON.py <employee_id>")
         sys.exit(1)
 
     try:
-        employee_id = int(sys.argv[1])
+        emp_id = int(sys.argv[1])
     except ValueError:
-        print("Employee ID must be an integer")
+        print("Invalid employee ID. Please enter a valid integer.")
         sys.exit(1)
 
-    user_data, todos_data = fetch_data(employee_id)
-    export_to_json(employee_id, user_data, todos_data)
-
-
-if __name__ == "__main__":
-    main()
+    export_to_json(emp_id)
