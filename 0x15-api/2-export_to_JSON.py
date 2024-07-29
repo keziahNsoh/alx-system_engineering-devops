@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 
-#!/usr/bin/python3
-
 import json
 import requests
 import sys
@@ -35,7 +33,7 @@ def export_to_json(employee_id, user_data, todos_data):
     }
     
     with open(filename, 'w') as file:
-        json.dump(data, file, indent=4)
+        json.dump(data, file, indent=0)
     
     print("Data exported to {}".format(filename))
 
