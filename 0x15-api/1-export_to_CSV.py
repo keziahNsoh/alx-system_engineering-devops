@@ -15,8 +15,8 @@ import urllib.request
 def fetch_employee_data(employee_id):
     """
     Fetches employee data from the API.
-    
-    Args:
+
+Args:
         employee_id (int): The ID of the employee.
 
     Returns:
