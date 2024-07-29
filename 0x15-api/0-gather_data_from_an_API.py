@@ -10,6 +10,7 @@ import sys
 base_url = "https://jsonplaceholder.typicode.com/users/{}"
 todo_base_url = "https://jsonplaceholder.typicode.com/users/{}/todos"
 
+
 def get_employee_todo_progress(employee_id):
     """
     Fetches and displays the TODO list progress for the specified employee ID.
