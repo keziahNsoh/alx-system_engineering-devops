@@ -98,4 +98,3 @@ if __name__ == '__main__':
 
     # Export data to CSV
     export_to_csv(employee_id, username, todos)
-
