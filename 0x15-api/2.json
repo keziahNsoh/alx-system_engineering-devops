@@ -1,0 +1,147 @@
+{
+    "USER": {
+        "phone": "010-692-6593 x09125",
+        "company": {
+            "bs": "synergize scalable supply-chains",
+            "name": "Deckow-Crist",
+            "catchPhrase": "Proactive didactic contingency"
+        },
+        "email": "Shanna@melissa.tv",
+        "name": "Ervin Howell",
+        "address": {
+            "suite": "Suite 879",
+            "street": "Victor Plains",
+            "zipcode": "90566-7771",
+            "geo": {
+                "lng": "-34.4618",
+                "lat": "-43.9509"
+            },
+            "city": "Wisokyburgh"
+        },
+        "id": 2,
+        "website": "anastasia.net",
+        "username": "Antonette"
+    },
+    "TODO": [
+        {
+            "id": 21,
+            "completed": false,
+            "title": "suscipit repellat esse quibusdam voluptatem incidunt",
+            "userId": 2
+        },
+        {
+            "id": 22,
+            "completed": true,
+            "title": "distinctio vitae autem nihil ut molestias quo",
+            "userId": 2
+        },
+        {
+            "id": 23,
+            "completed": false,
+            "title": "et itaque necessitatibus maxime molestiae qui quas velit",
+            "userId": 2
+        },
+        {
+            "id": 24,
+            "completed": false,
+            "title": "adipisci non ad dicta qui amet quaerat doloribus ea",
+            "userId": 2
+        },
+        {
+            "id": 25,
+            "completed": true,
+            "title": "voluptas quo tenetur perspiciatis explicabo natus",
+            "userId": 2
+        },
+        {
+            "id": 26,
+            "completed": true,
+            "title": "aliquam aut quasi",
+            "userId": 2
+        },
+        {
+            "id": 27,
+            "completed": true,
+            "title": "veritatis pariatur delectus",
+            "userId": 2
+        },
+        {
+            "id": 28,
+            "completed": false,
+            "title": "nesciunt totam sit blanditiis sit",
+            "userId": 2
+        },
+        {
+            "id": 29,
+            "completed": false,
+            "title": "laborum aut in quam",
+            "userId": 2
+        },
+        {
+            "id": 30,
+            "completed": true,
+            "title": "nemo perspiciatis repellat ut dolor libero commodi blanditiis omnis",
+            "userId": 2
+        },
+        {
+            "id": 31,
+            "completed": false,
+            "title": "repudiandae totam in est sint facere fuga",
+            "userId": 2
+        },
+        {
+            "id": 32,
+            "completed": false,
+            "title": "earum doloribus ea doloremque quis",
+            "userId": 2
+        },
+        {
+            "id": 33,
+            "completed": false,
+            "title": "sint sit aut vero",
+            "userId": 2
+        },
+        {
+            "id": 34,
+            "completed": false,
+            "title": "porro aut necessitatibus eaque distinctio",
+            "userId": 2
+        },
+        {
+            "id": 35,
+            "completed": true,
+            "title": "repellendus veritatis molestias dicta incidunt",
+            "userId": 2
+        },
+        {
+            "id": 36,
+            "completed": true,
+            "title": "excepturi deleniti adipisci voluptatem et neque optio illum ad",
+            "userId": 2
+        },
+        {
+            "id": 37,
+            "completed": false,
+            "title": "sunt cum tempora",
+            "userId": 2
+        },
+        {
+            "id": 38,
+            "completed": false,
+            "title": "totam quia non",
+            "userId": 2
+        },
+        {
+            "id": 39,
+            "completed": false,
+            "title": "doloremque quibusdam asperiores libero corrupti illum qui omnis",
+            "userId": 2
+        },
+        {
+            "id": 40,
+            "completed": true,
+            "title": "totam atque quo nesciunt",
+            "userId": 2
+        }
+    ]
+}
