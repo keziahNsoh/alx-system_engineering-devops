@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
-This script fetches and displays the TODO list progress for a specific employee
-from the JSONPlaceholder API.
+This script fetches and displays the TODO list progress for
+a specific employee from the JSONPlaceholder API.
 
 Usage:
     python3 0-gather_data_from_an_API.py <employee_id>
