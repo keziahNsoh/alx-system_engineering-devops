@@ -20,7 +20,9 @@ def get_employee_todo_progress(employee_id):
         employee_id (int): The ID of the employee whose TODO progress is to be fetched.
     """
     # Define the API endpoints
-    api_url = 'https://jsonplaceholder.typicode.com/users/{}'.format(employee_id)
+    api_url = (
+        'https://jsonplaceholder.typicode.com/users/{}'.format(employee_id)
+    )
 
     try:
         # Fetch employee details
@@ -33,7 +35,10 @@ def get_employee_todo_progress(employee_id):
         return
 
     # Fetch TODO list for the employee
-    todo_url = 'https://jsonplaceholder.typicode.com/users/{}/todos'.format(employee_id)
+    todo_url = (
+        'https://jsonplaceholder.typicode.com/users/{}/todos'.format(employee_id)
+    )
+
     try:
         with urllib.request.urlopen(todo_url) as response:
             todos = json.loads(response.read().decode())
@@ -44,13 +49,16 @@ def get_employee_todo_progress(employee_id):
 
     # Calculate completed and total tasks
     total_tasks = len(todos)
-    completed_tasks = [todo.get('title') for todo in todos if todo.get('completed')]
+    completed_tasks = [
+        todo.get('title') for todo in todos if todo.get('completed')
+    ]
     number_of_done_tasks = len(completed_tasks)
 
     # Print the result
     print('Employee {} is done with tasks({}/{})'.format(
-        employee_name, number_of_done_tasks, total_tasks))
-    
+        employee_name, number_of_done_tasks, total_tasks
+    ))
+
     for task in completed_tasks:
         print('\t {}'.format(task))
 
