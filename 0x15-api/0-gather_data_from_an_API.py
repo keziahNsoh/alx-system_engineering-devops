@@ -15,9 +15,10 @@ import urllib.request
 def get_employee_todo_progress(employee_id):
     """
     Fetches and prints the TODO list progress for a given employee ID.
-    
-    Args:
-        employee_id (int): The ID of the employee whose TODO progress is to be fetched.
+
+Args:
+        employee_id (int): The ID of the employee whose TODO
+        progress is to be fetched.
     """
     # Define the API endpoints
     api_url = (
@@ -36,7 +37,8 @@ def get_employee_todo_progress(employee_id):
 
     # Fetch TODO list for the employee
     todo_url = (
-        'https://jsonplaceholder.typicode.com/users/{}/todos'.format(employee_id)
+        'https://jsonplaceholder.typicode.com/users/'
+        '{}/todos'.format(employee_id)
     )
 
     try:
@@ -77,4 +79,3 @@ if __name__ == '__main__':
         sys.exit(1)
 
     get_employee_todo_progress(employee_id)
-
