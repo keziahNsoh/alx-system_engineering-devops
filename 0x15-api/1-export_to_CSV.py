@@ -45,7 +45,8 @@ def fetch_todo_data(employee_id):
         list: List of TODO items.
     """
     todo_url = (
-        'https://jsonplaceholder.typicode.com/users/{}/todos'.format(employee_id)
+        'https://jsonplaceholder.typicode.com/users/'
+        '{}/todos'.format(employee_id)
     )
 
     try:
