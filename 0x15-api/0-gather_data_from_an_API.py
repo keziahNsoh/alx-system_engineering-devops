@@ -53,7 +53,7 @@ def get_employee_todo_progress(employee_id):
         )
     )
     for task in completed_tasks:
-        print("     {}".format(task))
+        print("\t {}".format(task))
 
 
 if __name__ == "__main__":
