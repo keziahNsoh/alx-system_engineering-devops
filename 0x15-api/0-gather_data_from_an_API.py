@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This script retrieves and displays the TODO list progress of an employee
+Fetches and displays the TODO list progress of a given employee
 from a REST API based on a given employee ID.
 """
 
@@ -9,15 +9,14 @@ import sys
 
 def get_employee_todo_progress(employee_id):
     """
-    Fetches and displays the TODO list progress of a given employee.
+    Fetches and displays the TODO list progress for the specified employee ID.
+
     Args:
         employee_id (int): The ID of the employee.
     """
     # Define the API endpoints
-    user_url = 'https://jsonplaceholder.typicode.com/users/'
-               '{}'.format(employee_id)
-    todos_url = 'https://jsonplaceholder.typicode.com/users/'
-               '{}/todos'.format(employee_id)
+    user_url = 'https://jsonplaceholder.typicode.com/users/{}'.format(employee_id)
+    todos_url = 'https://jsonplaceholder.typicode.com/users/{}/todos'.format(employee_id)
 
     # Fetch employee data
     try:
@@ -60,3 +59,4 @@ if __name__ == "__main__":
         sys.exit(1)
 
     get_employee_todo_progress(emp_id)
+
