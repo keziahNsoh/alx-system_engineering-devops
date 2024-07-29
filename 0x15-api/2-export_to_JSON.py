@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Fetches the TODO list data for a given employee and exports it to a JSON file.
+"""
 
 import json
 import requests
@@ -6,6 +9,14 @@ import sys
 
 
 def fetch_data(employee_id):
+     """
+    Fetches the TODO list data for the specified employee ID and exports
+    it to a JSON file.
+
+    Args:
+        employee_id (int): The ID of the employee.
+    """
+     # Define the API endpoints
     base_url = "https://jsonplaceholder.typicode.com/"
     users_url = "{}users/{}".format(base_url, employee_id)
     todos_url = "{}todos?userId={}".format(base_url, employee_id)
