@@ -17,9 +17,12 @@ def export_to_json(employee_id):
         employee_id (int): The ID of the employee.
     """
     # Define the API endpoints
-    user_url = "https://jsonplaceholder.typicode.com/users/{}".format(employee_id)
-    todos_url = "https://jsonplaceholder.typicode.com/users/{}/todos".format(
-        employee_id
+    user_url = (
+        "https://jsonplaceholder.typicode.com/users/{}".format(employee_id)
+    )
+    todos_url = (
+        "https://jsonplaceholder.typicode.com/users/{}/todos".format(
+            employee_id)
     )
 
     # Fetch employee data
@@ -43,7 +46,11 @@ def export_to_json(employee_id):
     # Prepare data for export
     user_name = user_data.get("username", "Unknown")
     tasks = [
-        {"task": todo["title"], "completed": todo["completed"], "username": user_name}
+        {
+            "task": todo["title"],
+            "completed": todo["completed"],
+            "username": user_name
+        }
         for todo in todos_data
     ]
     export_data = {str(employee_id): tasks}
