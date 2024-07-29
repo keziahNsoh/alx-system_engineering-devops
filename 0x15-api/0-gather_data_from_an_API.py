@@ -14,8 +14,10 @@ def get_employee_todo_progress(employee_id):
         employee_id (int): The ID of the employee.
     """
     # Define the API endpoints
-    user_url = 'https://jsonplaceholder.typicode.com/users/{}'.format(employee_id)
-    todos_url = 'https://jsonplaceholder.typicode.com/users/{}/todos'.format(employee_id)
+    user_url = 'https://jsonplaceholder.typicode.com/users/'
+               '{}'.format(employee_id)
+    todos_url = 'https://jsonplaceholder.typicode.com/users/'
+               '{}/todos'.format(employee_id)
 
     # Fetch employee data
     try:
